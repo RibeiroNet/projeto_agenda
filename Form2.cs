@@ -16,5 +16,33 @@ namespace Projeto_Agenda
         {
             InitializeComponent();
         }
+        private void habilitarbotaocadastrar()
+        {
+            bool erro = false;
+            if (textbox_nome.Text == "")
+            {
+                erro = true;
+            }
+            if (textbox_usuario2.Text ==  "")
+            {  
+                erro = true;
+            }
+            if (text_senha.Text.Length < 8)
+            {
+                erro = true;
+            }
+            if (text_senha.Text != text_senha_confirma.Text)
+            {
+                erro |= true;
+            }
+            if (erro == false)
+            {
+
+            }
+       }
+        private void button_cadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

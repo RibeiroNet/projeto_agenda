@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textbox_usuário = new TextBox();
-            textBox1 = new TextBox();
+            textbox_nome = new TextBox();
+            textbox_usuario2 = new TextBox();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            text_senha = new TextBox();
+            text_senha_confirma = new TextBox();
             button_cadastrar = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -43,21 +43,21 @@
             button_cancelar = new Button();
             SuspendLayout();
             // 
-            // textbox_usuário
+            // textbox_nome
             // 
-            textbox_usuário.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textbox_usuário.Location = new Point(12, 43);
-            textbox_usuário.Name = "textbox_usuário";
-            textbox_usuário.Size = new Size(684, 43);
-            textbox_usuário.TabIndex = 3;
+            textbox_nome.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textbox_nome.Location = new Point(12, 43);
+            textbox_nome.Name = "textbox_nome";
+            textbox_nome.Size = new Size(684, 43);
+            textbox_nome.TabIndex = 3;
             // 
-            // textBox1
+            // textbox_usuario2
             // 
-            textBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(12, 131);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(684, 43);
-            textBox1.TabIndex = 4;
+            textbox_usuario2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textbox_usuario2.Location = new Point(12, 131);
+            textbox_usuario2.Name = "textbox_usuario2";
+            textbox_usuario2.Size = new Size(684, 43);
+            textbox_usuario2.TabIndex = 4;
             // 
             // textBox2
             // 
@@ -67,21 +67,21 @@
             textBox2.Size = new Size(684, 43);
             textBox2.TabIndex = 5;
             // 
-            // textBox3
+            // text_senha
             // 
-            textBox3.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(12, 306);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(337, 43);
-            textBox3.TabIndex = 6;
+            text_senha.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            text_senha.Location = new Point(12, 306);
+            text_senha.Name = "text_senha";
+            text_senha.Size = new Size(337, 43);
+            text_senha.TabIndex = 6;
             // 
-            // textBox4
+            // text_senha_confirma
             // 
-            textBox4.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(359, 306);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(337, 43);
-            textBox4.TabIndex = 7;
+            text_senha_confirma.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            text_senha_confirma.Location = new Point(359, 306);
+            text_senha_confirma.Name = "text_senha_confirma";
+            text_senha_confirma.Size = new Size(337, 43);
+            text_senha_confirma.TabIndex = 7;
             // 
             // button_cadastrar
             // 
@@ -93,6 +93,7 @@
             button_cadastrar.TabIndex = 8;
             button_cadastrar.Text = "Cadastrar";
             button_cadastrar.UseVisualStyleBackColor = false;
+            button_cadastrar.Click += button_cadastrar_Click;
             // 
             // label1
             // 
@@ -178,11 +179,11 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button_cadastrar);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
+            Controls.Add(text_senha_confirma);
+            Controls.Add(text_senha);
             Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(textbox_usuário);
+            Controls.Add(textbox_usuario2);
+            Controls.Add(textbox_nome);
             Name = "tela_inicial";
             Text = "tela_inicial";
             ResumeLayout(false);
@@ -191,11 +192,11 @@
 
         #endregion
 
-        private TextBox textbox_usuário;
-        private TextBox textBox1;
+        private TextBox textbox_nome;
+        private TextBox textbox_usuario2;
         private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox text_senha;
+        private TextBox text_senha_confirma;
         private Button button_cadastrar;
         private Label label1;
         private Label label2;
