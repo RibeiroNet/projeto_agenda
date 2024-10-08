@@ -86,10 +86,10 @@
             // button_cadastrar
             // 
             button_cadastrar.BackColor = Color.DeepSkyBlue;
-            button_cadastrar.Font = new Font("Showcard Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button_cadastrar.Location = new Point(84, 383);
+            button_cadastrar.Font = new Font("Showcard Gothic", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button_cadastrar.Location = new Point(22, 365);
             button_cadastrar.Name = "button_cadastrar";
-            button_cadastrar.Size = new Size(201, 55);
+            button_cadastrar.Size = new Size(305, 73);
             button_cadastrar.TabIndex = 8;
             button_cadastrar.Text = "Cadastrar";
             button_cadastrar.UseVisualStyleBackColor = false;
@@ -157,10 +157,10 @@
             // button_cancelar
             // 
             button_cancelar.BackColor = Color.DeepSkyBlue;
-            button_cancelar.Font = new Font("Showcard Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button_cancelar.Location = new Point(416, 383);
+            button_cancelar.Font = new Font("Showcard Gothic", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button_cancelar.Location = new Point(404, 365);
             button_cancelar.Name = "button_cancelar";
-            button_cancelar.Size = new Size(201, 55);
+            button_cancelar.Size = new Size(262, 73);
             button_cancelar.TabIndex = 16;
             button_cancelar.Text = "Cancelar";
             button_cancelar.UseVisualStyleBackColor = false;
