@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Projeto_Agenda
 {
-    internal class conexaoDB
+    static internal class conexaoDB
     {
-        public MySqlAttributeConnection Criarconexao()
+        static public MySqlConnection CriarConexao()
         {
             static internal class 
             string string_conexao = "Server=127.0.0.1; DataBase=bdAgenda;User ID=root;Password=root;";
