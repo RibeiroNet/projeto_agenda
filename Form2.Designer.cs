@@ -30,7 +30,7 @@
         {
             textbox_nome = new TextBox();
             textbox_usuario2 = new TextBox();
-            textBox2 = new TextBox();
+            text_telefone = new TextBox();
             textbox_senha = new TextBox();
             text_senha_confirma = new TextBox();
             button_cadastrar = new Button();
@@ -60,13 +60,13 @@
             textbox_usuario2.Size = new Size(684, 43);
             textbox_usuario2.TabIndex = 4;
             // 
-            // textBox2
+            // text_telefone
             // 
-            textBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(12, 220);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(684, 43);
-            textBox2.TabIndex = 5;
+            text_telefone.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            text_telefone.Location = new Point(12, 220);
+            text_telefone.Name = "text_telefone";
+            text_telefone.Size = new Size(684, 43);
+            text_telefone.TabIndex = 5;
             // 
             // textbox_senha
             // 
@@ -182,7 +182,7 @@
             Controls.Add(button_cadastrar);
             Controls.Add(text_senha_confirma);
             Controls.Add(textbox_senha);
-            Controls.Add(textBox2);
+            Controls.Add(text_telefone);
             Controls.Add(textbox_usuario2);
             Controls.Add(textbox_nome);
             Name = "tela_inicial";
@@ -195,7 +195,7 @@
 
         private TextBox textbox_nome;
         private TextBox textbox_usuario2;
-        private TextBox textBox2;
+        private TextBox text_telefone;
         private TextBox textbox_senha;
         private TextBox text_senha_confirma;
         private Button button_cadastrar;

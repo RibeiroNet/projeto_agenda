@@ -47,13 +47,24 @@ namespace Projeto_Agenda
         }
         private void button_cadastrar_Click(object sender, EventArgs e)
         {
-            string string_conexao = "Server=127.0.0.1; DataBase=dbAgenda;User ID=root;Password=root;";
+            string string_conexao = "Server=127.0.0.1; DataBase=bdAgenda;User ID=root;Password=root;";
             MySqlConnection conexao = new MySqlConnection(string_conexao);
             conexao.Open();
-            string sql = $"INSERT INTO tbUsuarios (nome, usuario, senha) Values ('{textbox_nome.Text}', '{textbox_usuario2.Text}', '{textbox_senha}')";
+
+            string sql = $"INSERT INTO tb_usuario (nome, usuario, telefone senha) Values (@nome, @usuario, @senha)";
+
             MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+            comando.Parameters.AddWithValue("@nome", textbox_nome.Text);
+            comando.Parameters.AddWithValue("@usuario",textbox_usuario2.Text);
+            comando.Parameters.AddWithValue("@telefone", text_telefone.Text);
+            comando.Parameters.AddWithValue("@senha", textbox_senha.Text);
             comando.ExecuteNonQuery();
-            conexao.Clone();
+
+            conexao.Close();
+
+            MessageBox.Show("Cadastro realizado com sucesso! \n Você não pode fazer login.");
+            this.Close();   
         }
 
         private void textbox_nome_TextChanged(object sender, EventArgs e)
@@ -62,4 +73,3 @@ namespace Projeto_Agenda
         }
     }
 }
-''
