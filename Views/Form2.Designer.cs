@@ -30,8 +30,8 @@
         {
             textbox_nome = new TextBox();
             textbox_usuario2 = new TextBox();
-            textBox2 = new TextBox();
-            text_senha = new TextBox();
+            text_telefone = new TextBox();
+            textbox_senha = new TextBox();
             text_senha_confirma = new TextBox();
             button_cadastrar = new Button();
             label1 = new Label();
@@ -50,30 +50,32 @@
             textbox_nome.Name = "textbox_nome";
             textbox_nome.Size = new Size(684, 43);
             textbox_nome.TabIndex = 3;
+            textbox_nome.TextChanged += textbox_nome_TextChanged;
             // 
             // textbox_usuario2
             // 
             textbox_usuario2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textbox_usuario2.Location = new Point(12, 131);
+            textbox_usuario2.Location = new Point(18, 131);
             textbox_usuario2.Name = "textbox_usuario2";
             textbox_usuario2.Size = new Size(684, 43);
             textbox_usuario2.TabIndex = 4;
+            textbox_usuario2.TextChanged += textbox_usuario2_TextChanged;
             // 
-            // textBox2
+            // text_telefone
             // 
-            textBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(12, 220);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(684, 43);
-            textBox2.TabIndex = 5;
+            text_telefone.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            text_telefone.Location = new Point(12, 220);
+            text_telefone.Name = "text_telefone";
+            text_telefone.Size = new Size(684, 43);
+            text_telefone.TabIndex = 5;
             // 
-            // text_senha
+            // textbox_senha
             // 
-            text_senha.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            text_senha.Location = new Point(12, 306);
-            text_senha.Name = "text_senha";
-            text_senha.Size = new Size(337, 43);
-            text_senha.TabIndex = 6;
+            textbox_senha.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textbox_senha.Location = new Point(12, 306);
+            textbox_senha.Name = "textbox_senha";
+            textbox_senha.Size = new Size(337, 43);
+            textbox_senha.TabIndex = 6;
             // 
             // text_senha_confirma
             // 
@@ -180,8 +182,8 @@
             Controls.Add(label1);
             Controls.Add(button_cadastrar);
             Controls.Add(text_senha_confirma);
-            Controls.Add(text_senha);
-            Controls.Add(textBox2);
+            Controls.Add(textbox_senha);
+            Controls.Add(text_telefone);
             Controls.Add(textbox_usuario2);
             Controls.Add(textbox_nome);
             Name = "tela_inicial";
@@ -194,8 +196,8 @@
 
         private TextBox textbox_nome;
         private TextBox textbox_usuario2;
-        private TextBox textBox2;
-        private TextBox text_senha;
+        private TextBox text_telefone;
+        private TextBox textbox_senha;
         private TextBox text_senha_confirma;
         private Button button_cadastrar;
         private Label label1;
