@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Projeto_Agenda.controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,35 +46,30 @@ namespace Projeto_Agenda
                 button_cadastrar.Enabled = false;
             }
         }
+
+
         private void button_cadastrar_Click(object sender, EventArgs e)
         {
-           MySqlConnection conexao = 
-            conexao.Open();
+            //pegando os dados do formulário
+            string nome = textbox_nome.Text;
+            string usuario =textbox_usuario2.Text;
+            string telefone = text_telefone.Text;
+            string senha = textbox_senha.Text;
 
-            string sql = $"INSERT INTO tb_usuario (nome, usuario, telefone senha) Values (@nome, @usuario, @senha)";
+            //instanciando o objeto UsuarioController
+            UsuarioController controleusuario = new UsuarioController();
 
-            MySqlCommand comando = new MySqlCommand(sql, conexao);
+            //inserindo usuario
+            bool resultado = controleusuario.AddUsuario(nome, usuario, telefone, senha);
 
-            comando.Parameters.AddWithValue("@nome", textbox_nome.Text);
-            comando.Parameters.AddWithValue("@usuario", textbox_usuario2.Text);
-            comando.Parameters.AddWithValue("@telefone", text_telefone.Text);
-            comando.Parameters.AddWithValue("@senha", textbox_senha.Text);
-            comando.ExecuteNonQuery();
-
-            conexao.Close();
-
-            MessageBox.Show("Cadastro realizado com sucesso! \n Você não pode fazer login.");
-            this.Close();
-        }
-
-        private void textbox_nome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textbox_usuario2_TextChanged(object sender, EventArgs e)
-        {
-
+            if (resultado)
+            {
+                MessageBox.Show("Cadastro efetuado com sucesso.");
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível concluir o cadastro.");
+            }
         }
     }
 }
