@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Projeto_Agenda.data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,7 @@ namespace Projeto_Agenda
         }
         private void button_cadastrar_Click(object sender, EventArgs e)
         {
-           MySqlConnection conexao = 
+            MySqlConnection conexao = conexaoDB.CriarConexao();
             conexao.Open();
 
             string sql = $"INSERT INTO tb_usuario (nome, usuario, telefone senha) Values (@nome, @usuario, @senha)";
