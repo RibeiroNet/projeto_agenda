@@ -51,6 +51,7 @@
             textbox_nome.Name = "textbox_nome";
             textbox_nome.Size = new Size(599, 36);
             textbox_nome.TabIndex = 3;
+            textbox_nome.TextChanged += textbox_nome_TextChanged;
             // 
             // textbox_usuario2
             // 

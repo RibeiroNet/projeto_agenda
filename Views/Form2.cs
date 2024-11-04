@@ -52,7 +52,7 @@ namespace Projeto_Agenda
         {
             //pegando os dados do formulário
             string nome = textbox_nome.Text;
-            string usuario =textbox_usuario2.Text;
+            string usuario = textbox_usuario2.Text;
             string telefone = text_telefone.Text;
             string senha = textbox_senha.Text;
 
@@ -70,6 +70,11 @@ namespace Projeto_Agenda
             {
                 MessageBox.Show("Não foi possível concluir o cadastro.");
             }
+        }
+
+        private void textbox_nome_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
