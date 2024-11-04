@@ -12,7 +12,8 @@ namespace Projeto_Agenda
         static public MySqlConnection CriarConexao()
         {
          
-            string string_conexao = "Server=127.0.0.1; DataBase=bdAgenda;User ID=root;Password=root;";
+            string string_conexao = "Server=127.0.0.1; DataBase=dbAgenda;User ID=root;Password=root;";
+
             MySqlConnection conexao = new MySqlConnection(string_conexao);
             return conexao;
         }
