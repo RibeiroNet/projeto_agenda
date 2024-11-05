@@ -79,9 +79,14 @@ namespace Projeto_Agenda.controller
                     conexao.Close();
                 return true;
                 }
+                else
+                {
+                    return false;
+                }
 
             }
             catch
+
             {
                 return false ;
             }

@@ -76,5 +76,10 @@ namespace Projeto_Agenda
         {
 
         }
+
+        private void button_cancelar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

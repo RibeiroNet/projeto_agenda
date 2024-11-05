@@ -172,6 +172,7 @@
             button_cancelar.TabIndex = 16;
             button_cancelar.Text = "Cancelar";
             button_cancelar.UseVisualStyleBackColor = false;
+            button_cancelar.Click += button_cancelar_Click;
             // 
             // tela_inicial
             // 
