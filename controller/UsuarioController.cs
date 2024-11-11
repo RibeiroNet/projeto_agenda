@@ -34,7 +34,6 @@ namespace Projeto_Agenda.controller
                 comando.Parameters.AddWithValue("@senha", senha);
 
                 //executando no banco de dados 
-                comando.ExecuteNonQuery();
                 int LinhasAfetadas = comando.ExecuteNonQuery();
 
                 conexao.Close();
@@ -50,7 +49,7 @@ namespace Projeto_Agenda.controller
             }
             catch (Exception erro)
             {
-                MessageBox.Show("erro ao efetuar o cadastro: {erro.Message}");
+                MessageBox.Show($"erro ao efetuar o cadastro: {erro.Message}");
                 return false;
             }
 

@@ -81,5 +81,10 @@ namespace Projeto_Agenda
         {
 
         }
+
+        private void textbox_usuario2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

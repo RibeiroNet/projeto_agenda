@@ -31,6 +31,7 @@
             menuStrip1 = new MenuStrip();
             arquivoToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
+            arquivoToolStripMenuItem1 = new ToolStripMenuItem();
             editarToolStripMenuItem = new ToolStripMenuItem();
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
             categoriasToolStripMenuItem = new ToolStripMenuItem();
@@ -48,7 +49,7 @@
             // 
             // arquivoToolStripMenuItem
             // 
-            arquivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sairToolStripMenuItem });
+            arquivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sairToolStripMenuItem, arquivoToolStripMenuItem1 });
             arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             arquivoToolStripMenuItem.Size = new Size(61, 20);
             arquivoToolStripMenuItem.Text = "&Arquivo";
@@ -58,6 +59,13 @@
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             sairToolStripMenuItem.Size = new Size(180, 22);
             sairToolStripMenuItem.Text = "&Sair ";
+            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
+            // 
+            // arquivoToolStripMenuItem1
+            // 
+            arquivoToolStripMenuItem1.Name = "arquivoToolStripMenuItem1";
+            arquivoToolStripMenuItem1.Size = new Size(180, 22);
+            arquivoToolStripMenuItem1.Text = "&Arquivo";
             // 
             // editarToolStripMenuItem
             // 
@@ -70,13 +78,14 @@
             // 
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarToolStripMenuItem.Size = new Size(124, 22);
             cadastrarToolStripMenuItem.Text = "&Cadastrar";
+            cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
             // 
             // categoriasToolStripMenuItem
             // 
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            categoriasToolStripMenuItem.Size = new Size(180, 22);
+            categoriasToolStripMenuItem.Size = new Size(133, 22);
             categoriasToolStripMenuItem.Text = "Categorias ";
             // 
             // frm_Principal
@@ -88,6 +97,7 @@
             MainMenuStrip = menuStrip1;
             Name = "frm_Principal";
             Text = "frm_Principal";
+            FormClosed += frm_Principal_FormClosed;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -102,5 +112,6 @@
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem cadastrarToolStripMenuItem;
         private ToolStripMenuItem categoriasToolStripMenuItem;
+        private ToolStripMenuItem arquivoToolStripMenuItem1;
     }
 }

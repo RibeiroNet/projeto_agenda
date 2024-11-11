@@ -16,5 +16,20 @@ namespace Projeto_Agenda.Views
         {
             InitializeComponent();
         }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frm_Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

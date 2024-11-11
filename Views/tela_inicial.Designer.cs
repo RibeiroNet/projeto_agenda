@@ -61,6 +61,7 @@
             textbox_usuario2.Name = "textbox_usuario2";
             textbox_usuario2.Size = new Size(599, 36);
             textbox_usuario2.TabIndex = 4;
+            textbox_usuario2.TextChanged += textbox_usuario2_TextChanged;
             // 
             // text_telefone
             // 
