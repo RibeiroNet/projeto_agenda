@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Mysqlx.Cursor;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,8 @@ namespace Projeto_Agenda.controller
                 //executando no banco de dados 
                 int LinhasAfetadas = comando.ExecuteNonQuery();
 
+                this.CriarUsuarioSQL(usuario, senha);
+
                 conexao.Close();
 
                 if (LinhasAfetadas > 0)
@@ -68,15 +71,16 @@ namespace Projeto_Agenda.controller
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
-                comando.Parameters.AddWithValue("@usuario", usuario); 
+                comando.Parameters.AddWithValue("@usuario", usuario);
                 comando.Parameters.AddWithValue("@senha", senha);
 
                 //executando no banco de dados 
-               MySqlDataReader resultado = comando.ExecuteReader();
+                MySqlDataReader resultado = comando.ExecuteReader();
 
-                if (resultado.Read()) {
+                if (resultado.Read())
+                {
                     conexao.Close();
-                return true;
+                    return true;
                 }
                 else
                 {
@@ -87,8 +91,39 @@ namespace Projeto_Agenda.controller
             catch
 
             {
-                return false ;
+                return false;
             }
         }
+            public bool CriarUsuarioSQL(string usuario, string senha)
+            {
+                MySqlConnection conexao = null;
+                try
+                {
+                    conexao = conexaoDB.CriarConexao();
+
+                    string sql = $"CREATE USER '{usuario}'@'%IDENTIFIED BY'{senha}';";
+
+                    conexao.Open();
+
+                    MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                    MySqlDataReader resultado = comando.ExecuteReader();
+                    if (resultado.Read())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                catch
+                {
+                    return false;
+                }
+
+
+            }
+        
     }
 }
