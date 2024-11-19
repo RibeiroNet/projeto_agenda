@@ -16,3 +16,9 @@ nome_categoria varchar(20) not null
 
 select cod_categoria as 'Código', nome_categoria as 'Categoria'
 from tb_categoria;
+
+create trigger trInsertCategoria 
+before
+insert
+on tb_Categoria for each row 
+begin 
