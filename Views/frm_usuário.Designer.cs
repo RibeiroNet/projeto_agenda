@@ -43,16 +43,20 @@
             // DGV_usuario
             // 
             DGV_usuario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGV_usuario.Location = new Point(26, 12);
+            DGV_usuario.Location = new Point(30, 16);
+            DGV_usuario.Margin = new Padding(3, 4, 3, 4);
             DGV_usuario.Name = "DGV_usuario";
-            DGV_usuario.Size = new Size(232, 186);
+            DGV_usuario.RowHeadersWidth = 51;
+            DGV_usuario.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DGV_usuario.Size = new Size(265, 248);
             DGV_usuario.TabIndex = 0;
             // 
             // button_excluir_usuario
             // 
-            button_excluir_usuario.Location = new Point(74, 218);
+            button_excluir_usuario.Location = new Point(85, 291);
+            button_excluir_usuario.Margin = new Padding(3, 4, 3, 4);
             button_excluir_usuario.Name = "button_excluir_usuario";
-            button_excluir_usuario.Size = new Size(145, 51);
+            button_excluir_usuario.Size = new Size(166, 68);
             button_excluir_usuario.TabIndex = 1;
             button_excluir_usuario.Text = "Excluir";
             button_excluir_usuario.UseVisualStyleBackColor = true;
@@ -65,18 +69,21 @@
             groupBox1.Controls.Add(txt_usuario);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(294, 44);
+            groupBox1.Location = new Point(336, 59);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(219, 190);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(250, 253);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Alterar Senha";
             // 
             // button_cadastrar_usuario
             // 
-            button_cadastrar_usuario.Location = new Point(55, 147);
+            button_cadastrar_usuario.Location = new Point(63, 196);
+            button_cadastrar_usuario.Margin = new Padding(3, 4, 3, 4);
             button_cadastrar_usuario.Name = "button_cadastrar_usuario";
-            button_cadastrar_usuario.Size = new Size(109, 32);
+            button_cadastrar_usuario.Size = new Size(125, 43);
             button_cadastrar_usuario.TabIndex = 3;
             button_cadastrar_usuario.Text = "Cadastrar";
             button_cadastrar_usuario.UseVisualStyleBackColor = true;
@@ -84,46 +91,49 @@
             // 
             // txt_nova_senha
             // 
-            txt_nova_senha.Location = new Point(22, 114);
+            txt_nova_senha.Location = new Point(25, 152);
+            txt_nova_senha.Margin = new Padding(3, 4, 3, 4);
             txt_nova_senha.Name = "txt_nova_senha";
-            txt_nova_senha.Size = new Size(176, 23);
+            txt_nova_senha.Size = new Size(201, 27);
             txt_nova_senha.TabIndex = 3;
             // 
             // txt_usuario
             // 
-            txt_usuario.Location = new Point(22, 55);
+            txt_usuario.Location = new Point(25, 73);
+            txt_usuario.Margin = new Padding(3, 4, 3, 4);
             txt_usuario.Name = "txt_usuario";
-            txt_usuario.Size = new Size(176, 23);
+            txt_usuario.Size = new Size(201, 27);
             txt_usuario.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(22, 96);
+            label2.Location = new Point(25, 128);
             label2.Name = "label2";
-            label2.Size = new Size(73, 15);
+            label2.Size = new Size(92, 20);
             label2.TabIndex = 1;
             label2.Text = "Nova Senha ";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 37);
+            label1.Location = new Point(25, 49);
             label1.Name = "label1";
-            label1.Size = new Size(47, 15);
+            label1.Size = new Size(59, 20);
             label1.TabIndex = 0;
             label1.Text = "Usuário";
             // 
             // frm_usuário
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources._03_Pag_contatos_anuncio;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(558, 295);
+            ClientSize = new Size(638, 393);
             Controls.Add(groupBox1);
             Controls.Add(button_excluir_usuario);
             Controls.Add(DGV_usuario);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frm_usuário";
             Text = "frm_usuário";
             ((System.ComponentModel.ISupportInitialize)DGV_usuario).EndInit();

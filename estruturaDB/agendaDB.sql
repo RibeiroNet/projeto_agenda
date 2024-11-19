@@ -22,3 +22,5 @@ before
 insert
 on tb_Categoria for each row 
 begin 
+   set new.usuario = current_user()
+   end

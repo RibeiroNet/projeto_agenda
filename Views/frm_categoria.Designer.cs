@@ -41,9 +41,11 @@
             // 
             groupBox1.Controls.Add(button_cadastrar);
             groupBox1.Controls.Add(textbox_categoria);
-            groupBox1.Location = new Point(40, 114);
+            groupBox1.Location = new Point(29, 66);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(291, 181);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(333, 241);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Insira o nome da nova categoria ";
@@ -51,9 +53,10 @@
             // 
             // button_cadastrar
             // 
-            button_cadastrar.Location = new Point(5, 94);
+            button_cadastrar.Location = new Point(7, 131);
+            button_cadastrar.Margin = new Padding(3, 4, 3, 4);
             button_cadastrar.Name = "button_cadastrar";
-            button_cadastrar.Size = new Size(280, 51);
+            button_cadastrar.Size = new Size(320, 68);
             button_cadastrar.TabIndex = 1;
             button_cadastrar.Text = "Cadastrar";
             button_cadastrar.UseVisualStyleBackColor = true;
@@ -61,25 +64,29 @@
             // 
             // textbox_categoria
             // 
-            textbox_categoria.Location = new Point(18, 45);
+            textbox_categoria.Location = new Point(21, 60);
+            textbox_categoria.Margin = new Padding(3, 4, 3, 4);
             textbox_categoria.Name = "textbox_categoria";
-            textbox_categoria.Size = new Size(249, 23);
+            textbox_categoria.Size = new Size(284, 27);
             textbox_categoria.TabIndex = 0;
             // 
             // DGV_categoria
             // 
             DGV_categoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGV_categoria.Location = new Point(417, 12);
+            DGV_categoria.Location = new Point(392, 31);
+            DGV_categoria.Margin = new Padding(3, 4, 3, 4);
             DGV_categoria.Name = "DGV_categoria";
-            DGV_categoria.Size = new Size(291, 404);
+            DGV_categoria.RowHeadersWidth = 51;
+            DGV_categoria.Size = new Size(333, 276);
             DGV_categoria.TabIndex = 1;
             DGV_categoria.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button_excluir
             // 
-            button_excluir.Location = new Point(75, 347);
+            button_excluir.Location = new Point(441, 315);
+            button_excluir.Margin = new Padding(3, 4, 3, 4);
             button_excluir.Name = "button_excluir";
-            button_excluir.Size = new Size(214, 52);
+            button_excluir.Size = new Size(245, 69);
             button_excluir.TabIndex = 2;
             button_excluir.Text = "Excluir";
             button_excluir.UseVisualStyleBackColor = true;
@@ -87,13 +94,14 @@
             // 
             // frm_categoria
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources._03_Pag_contatos_anuncio;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(737, 393);
             Controls.Add(button_excluir);
             Controls.Add(DGV_categoria);
             Controls.Add(groupBox1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frm_categoria";
             Text = "frm_categoria";
             Load += frm_categoria_Load;
