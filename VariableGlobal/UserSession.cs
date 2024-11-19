@@ -32,5 +32,14 @@ namespace Projeto_Agenda.VariableGlobal
                 _senha = value;
             }
         }
+
+        public static string nome
+        {
+            get { return _nome; }
+            set
+            {
+                _nome = value;
+            }
+        }
     }
 }
