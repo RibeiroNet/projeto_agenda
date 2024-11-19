@@ -31,5 +31,16 @@ namespace Projeto_Agenda.Views
         {
             Application.Exit();
         }
+
+        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_usuário usuario = new frm_usuário();
+            usuario.Show();
+        }
+
+        private void arquivoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

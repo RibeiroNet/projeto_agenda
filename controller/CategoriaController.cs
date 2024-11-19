@@ -93,16 +93,22 @@ namespace Projeto_Agenda.controller
         {
             try
             {
+                // cria conexão, classe conexãoDB que está dentro de DATA
                 MySqlConnection conexao = conexaoDB.CriarConexao();
 
+                //comando a ser executado
                 string sql = "DELETE FROM tbCategoria WHERE cod_categoria = @cod_categoria;";
 
+                //abriu conexão
                 conexao.Open();
 
+                //responsável por executar o comando SQl
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
+                //trocando valores de @ por informações a serem cadastradas 
                 comando.Parameters.AddWithValue("cod_categoria", cod_categoria);
 
+                //executando no banco de dados 
                 int LinhasAfetadas = comando.ExecuteNonQuery();
 
                 conexao.Close();
