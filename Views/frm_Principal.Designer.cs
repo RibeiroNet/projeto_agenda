@@ -79,8 +79,9 @@
             // categoriasToolStripMenuItem
             // 
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            categoriasToolStripMenuItem.Size = new Size(133, 22);
+            categoriasToolStripMenuItem.Size = new Size(180, 22);
             categoriasToolStripMenuItem.Text = "Categorias ";
+            categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click;
             // 
             // usuárioToolStripMenuItem
             // 

@@ -69,5 +69,23 @@ namespace Projeto_Agenda.Views
             bool resultado = categoria.ExcluirCategoria(codigo);
             AtualizarDataGrid();
         }
+
+        private void button_alterar_Click(object sender, EventArgs e)
+        {
+            int codigo = (int)DGV_categoria.SelectedRows[0].Cells[0].Value;
+            CategoriaController controlecategoria = new CategoriaController();
+            bool resultado = controlecategoria.UpdateCategoria(codigo, textbox_categoria.Text);
+
+            if (resultado)
+            {
+                MessageBox.Show("Categoria atualizada.");
+            }
+            else
+            {
+                MessageBox.Show("Alteração não realizada.");
+            }
+
+            AtualizarDataGrid();
+        }
     }
 }

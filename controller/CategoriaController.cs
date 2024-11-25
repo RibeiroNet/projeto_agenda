@@ -16,7 +16,7 @@ namespace Projeto_Agenda.controller
             MySqlConnection conexao = null;
             try
             {
-                 conexao = conexaoDB.CriarConexao();
+                conexao = conexaoDB.CriarConexao();
 
                 string sql = "INSERT INTO tb_categoria(nome_categoria) VALUES (@nome_categoria );";
 
@@ -65,13 +65,13 @@ namespace Projeto_Agenda.controller
                 string sql = @"select cod_categoria as 'Código', nome_categoria as 'Categoria'
                              from tb_categoria;";
 
-                conexao.Open(); 
+                conexao.Open();
 
                 //ao invés de mysqlcommand usamos mysqldataadapter, pois quero trabalhar 
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(sql, conexao);
 
                 //crei uma tabela vazia 
-                DataTable tabela = new DataTable(); 
+                DataTable tabela = new DataTable();
 
                 adaptador.Fill(tabela);
 
@@ -129,7 +129,48 @@ namespace Projeto_Agenda.controller
 
                 return false;
             }
+        }
+
+        public bool UpdateCategoria(int codigo, string nome_categoria)
+        {
+            MySqlConnection conexao = null;
+
+            try
+            {
+                // cria conexão, classe conexãoDB que está dentro de DATA
+                conexao = conexaoDB.CriarConexao();
+
+                //comando a ser executado
+                string sql = "UPDATE tbCategoria SET nome_categoria = @nome_categoria;";
+
+                //abriu conexão
+                conexao.Open();
+
+                //responsável por executar o comando SQl
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                //trocando valores de @ por informações a serem cadastradas 
+                comando.Parameters.AddWithValue("@nome_categoria", nome_categoria);
+                int LinhasAfetadas = comando.ExecuteNonQuery();
+                conexao.Close();
+
+                if (LinhasAfetadas > 0)
+                {
+                    return true;
+                }
+
+                else
+                {
+                    return false;
+                }
             }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"Erro ao recuperar categoria: {erro.Message}");
+
+                return false;
+            }
+
         }
     }
-
+}

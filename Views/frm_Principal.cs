@@ -40,7 +40,13 @@ namespace Projeto_Agenda.Views
 
         private void arquivoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_categoria categoria = new frm_categoria();
+            categoria.Show();
         }
     }
 }

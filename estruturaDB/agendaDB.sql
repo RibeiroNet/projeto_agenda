@@ -8,14 +8,10 @@ telefone varchar (20),
 senha varchar(10) not null
 );
 
-
 create table tb_Categoria (
 cod_categoria int auto_increment primary key,
 nome_categoria varchar(20) not null
 );
-
-select cod_categoria as 'Código', nome_categoria as 'Categoria'
-from tb_categoria;
 
 delimiter $$
 create trigger trInsertCategoria 
@@ -28,13 +24,81 @@ begin
 $$
 
 delimiter ;
-insert into tb_Categoria(categoria)
-values ("amigos")
 
-select * from tb_Categoria;
 
-create user 'User1'@'%' identified by '12345678';
+create table tbLog (
+usuario varchar(40),
+datahora datetime not null primary key,
+descricao varchar(70)
+);
 
-select * from tbUsuarios;
+delimiter $$
+create trigger trLogDeleteCategoria
+after
+delete
+on tb_categoria for each row 
+begin
+insert into tbLog
+    (usuario,
+    datahora,
+    descricao)
+    values
+    (user(),
+    current_date(),
+    concat('A categoria', old.nome_categoria, 'foi excluída.')
+    );
+  end;
+  $$
+delimiter ;  
 
-select * from mysql.user;
+delimiter $$
+create trigger trLogInsertCategoria
+before
+insert
+on tb_categoria for each row 
+begin
+insert into tbLog
+    (usuario,
+    datahora,
+    descricao)
+    values
+    (user(),
+    current_date(),
+    concat('A categoria', new.nome_categoria, 'foi adicionada.')
+    );
+  end;
+  $$
+delimiter ;  
+
+
+delimiter $$
+create trigger trLogUpdateCategoria
+after
+update
+on tb_categoria for each row 
+begin
+insert into tbLog
+    (usuario,
+    datahora,
+    descricao)
+    values
+    (user(),
+    current_date(),
+    concat('A categoria', old.nome_categoria, 'foi renomeada para', new.nome_categoria)
+    );
+  end;
+  $$
+delimiter ;  
+
+
+
+
+
+
+
+
+
+
+
+
+

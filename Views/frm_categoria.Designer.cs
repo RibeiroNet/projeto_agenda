@@ -33,6 +33,7 @@
             textbox_categoria = new TextBox();
             DGV_categoria = new DataGridView();
             button_excluir = new Button();
+            button_alterar = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGV_categoria).BeginInit();
             SuspendLayout();
@@ -41,11 +42,9 @@
             // 
             groupBox1.Controls.Add(button_cadastrar);
             groupBox1.Controls.Add(textbox_categoria);
-            groupBox1.Location = new Point(29, 66);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(25, 50);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(333, 241);
+            groupBox1.Size = new Size(291, 181);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Insira o nome da nova categoria ";
@@ -53,10 +52,9 @@
             // 
             // button_cadastrar
             // 
-            button_cadastrar.Location = new Point(7, 131);
-            button_cadastrar.Margin = new Padding(3, 4, 3, 4);
+            button_cadastrar.Location = new Point(6, 98);
             button_cadastrar.Name = "button_cadastrar";
-            button_cadastrar.Size = new Size(320, 68);
+            button_cadastrar.Size = new Size(280, 51);
             button_cadastrar.TabIndex = 1;
             button_cadastrar.Text = "Cadastrar";
             button_cadastrar.UseVisualStyleBackColor = true;
@@ -64,44 +62,51 @@
             // 
             // textbox_categoria
             // 
-            textbox_categoria.Location = new Point(21, 60);
-            textbox_categoria.Margin = new Padding(3, 4, 3, 4);
+            textbox_categoria.Location = new Point(18, 45);
             textbox_categoria.Name = "textbox_categoria";
-            textbox_categoria.Size = new Size(284, 27);
+            textbox_categoria.Size = new Size(249, 23);
             textbox_categoria.TabIndex = 0;
             // 
             // DGV_categoria
             // 
             DGV_categoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGV_categoria.Location = new Point(392, 31);
-            DGV_categoria.Margin = new Padding(3, 4, 3, 4);
+            DGV_categoria.Location = new Point(343, 23);
             DGV_categoria.Name = "DGV_categoria";
             DGV_categoria.RowHeadersWidth = 51;
-            DGV_categoria.Size = new Size(333, 276);
+            DGV_categoria.Size = new Size(291, 207);
             DGV_categoria.TabIndex = 1;
             DGV_categoria.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button_excluir
             // 
-            button_excluir.Location = new Point(441, 315);
-            button_excluir.Margin = new Padding(3, 4, 3, 4);
+            button_excluir.Location = new Point(386, 236);
             button_excluir.Name = "button_excluir";
-            button_excluir.Size = new Size(245, 69);
+            button_excluir.Size = new Size(214, 52);
             button_excluir.TabIndex = 2;
             button_excluir.Text = "Excluir";
             button_excluir.UseVisualStyleBackColor = true;
             button_excluir.Click += button_excluir_Click;
             // 
+            // button_alterar
+            // 
+            button_alterar.Location = new Point(31, 237);
+            button_alterar.Name = "button_alterar";
+            button_alterar.Size = new Size(280, 58);
+            button_alterar.TabIndex = 3;
+            button_alterar.Text = "Alterar";
+            button_alterar.UseVisualStyleBackColor = true;
+            button_alterar.Click += button_alterar_Click;
+            // 
             // frm_categoria
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources._03_Pag_contatos_anuncio;
-            ClientSize = new Size(737, 393);
+            ClientSize = new Size(645, 295);
+            Controls.Add(button_alterar);
             Controls.Add(button_excluir);
             Controls.Add(DGV_categoria);
             Controls.Add(groupBox1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "frm_categoria";
             Text = "frm_categoria";
             Load += frm_categoria_Load;
@@ -118,5 +123,6 @@
         private TextBox textbox_categoria;
         private DataGridView DGV_categoria;
         private Button button_excluir;
+        private Button button_alterar;
     }
 }
