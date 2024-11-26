@@ -14,7 +14,7 @@ nome_categoria varchar(20) not null
 );
 
 create table tb_Contato (
-nome varchar(80) not null,
+contato varchar(80) not null,
 telefone varchar(15) primary key,
 categoria varchar(30)
 );
@@ -96,7 +96,25 @@ insert into tbLog
   $$
 delimiter ;  
 
-
+//log do frm contatos 
+delimiter $$
+create trigger trLogInsertContato
+after
+insert
+on tb_Contato for each row 
+begin
+insert into tbLog
+    (usuario,
+    datahora,
+    descricao)
+    values
+    (user(),
+    current_timestamp(),
+    concat('O contato', new.contato, 'foi inserido.')
+    );
+  end;
+  $$
+delimiter ;  
 
 
 

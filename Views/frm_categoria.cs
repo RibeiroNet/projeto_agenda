@@ -39,7 +39,7 @@ namespace Projeto_Agenda.Views
 
             if (resultado == true)
             {
-                MessageBox.Show("Cadastro efeuado com sucesso.");
+                MessageBox.Show("Cadastro efetuado com sucesso.");
             }
             else
             {

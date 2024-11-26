@@ -1,4 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
+using Projeto_Agenda.data;
+using Projeto_Agenda.VariableGlobal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -59,11 +61,11 @@ namespace Projeto_Agenda.controller
             try
             {
                 //cria conexão, usa a classe ConexaoDB que já havia sido criado 
-                conexao = conexaoDB.CriarConexao();
+                conexao = conexaoDB.CriarConexao(UserSession.usuario, UserSession.senha); 
 
                 //select que vai retornar dados 
-                string sql = @"select cod_categoria as 'Código', nome_categoria as 'Categoria'
-                             from tb_categoria;";
+                string sql = @"select cod_categoria as 'Código', nome_categoria as 'Categoria' from tb_categoria;" +
+                    $"WHERE usuario = User();";
 
                 conexao.Open();
 

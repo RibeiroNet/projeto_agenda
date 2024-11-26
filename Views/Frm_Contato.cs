@@ -18,6 +18,12 @@ namespace Projeto_Agenda.Views
             InitializeComponent();
         }
 
+        private void AtualizarDataGrid()
+        {
+            ContatoController controlecontato = new ContatoController();
+            DataTable tabela = controlecontato.GetContato();
+            DGV_contato.DataSource = tabela;
+        }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -27,11 +33,11 @@ namespace Projeto_Agenda.Views
         {
             string contato = txt_contato.Text;
             string telefone = txt_telefone.Text;
-            string categoria = txt_categoria.Text;
+            string categoria = cmb_categoria.Text;
 
             ContatoController controlecontato = new ContatoController();
 
-            bool resultado = controlecontato.AddUsuario(contato, telefone, categoria);  
+            bool resultado = controlecontato.AddContato(contato, telefone, categoria);
 
             if (resultado)
             {
@@ -44,6 +50,30 @@ namespace Projeto_Agenda.Views
 
             DataTable tabela = controlecontato.GetContato();
             DGV_contato.DataSource = tabela;
+
+            AtualizarDataGrid();
+            CategoriaController controlecategoria = new CategoriaController();
+            DataTable ttabela = controlecategoria.GetCategorias();
+            cmb_categoria.DataSource = ttabela;
+            cmb_categoria.DisplayMember = "categoria";
+        }
+
+        private void Frm_Contato_Load(object sender, EventArgs e)
+        {
+            AtualizarDataGrid();
+        }
+
+        private void button_excluir_Click(object sender, EventArgs e)
+        {
+            string telefone = Convert.ToString(DGV_contato.SelectedRows[0].Cells[1].Value);
+            ContatoController contato = new ContatoController();
+            bool resultado = contato.ExcluirContato(telefone);
+            AtualizarDataGrid();
+        }
+
+        private void button_alterar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

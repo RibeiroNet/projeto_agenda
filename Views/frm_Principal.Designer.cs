@@ -35,8 +35,8 @@
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
             categoriasToolStripMenuItem = new ToolStripMenuItem();
             usuárioToolStripMenuItem = new ToolStripMenuItem();
-            lbl_bv = new Label();
             contatoToolStripMenuItem = new ToolStripMenuItem();
+            lbl_bv = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,33 +76,23 @@
             // 
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(155, 26);
+            cadastrarToolStripMenuItem.Size = new Size(224, 26);
             cadastrarToolStripMenuItem.Text = "&Cadastrar";
             cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
             // 
             // categoriasToolStripMenuItem
             // 
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            categoriasToolStripMenuItem.Size = new Size(167, 26);
+            categoriasToolStripMenuItem.Size = new Size(224, 26);
             categoriasToolStripMenuItem.Text = "Categorias ";
             categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click;
             // 
             // usuárioToolStripMenuItem
             // 
             usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            usuárioToolStripMenuItem.Size = new Size(155, 26);
+            usuárioToolStripMenuItem.Size = new Size(224, 26);
             usuárioToolStripMenuItem.Text = "Usuário";
             usuárioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
-            // 
-            // lbl_bv
-            // 
-            lbl_bv.AutoSize = true;
-            lbl_bv.Location = new Point(12, 42);
-            lbl_bv.Name = "lbl_bv";
-            lbl_bv.Size = new Size(50, 20);
-            lbl_bv.TabIndex = 1;
-            lbl_bv.Text = "label1";
-            lbl_bv.Click += lbl_bv_Click;
             // 
             // contatoToolStripMenuItem
             // 
@@ -110,6 +100,15 @@
             contatoToolStripMenuItem.Size = new Size(224, 26);
             contatoToolStripMenuItem.Text = "Contato";
             contatoToolStripMenuItem.Click += contatoToolStripMenuItem_Click;
+            // 
+            // lbl_bv
+            // 
+            lbl_bv.AutoSize = true;
+            lbl_bv.Location = new Point(12, 42);
+            lbl_bv.Name = "lbl_bv";
+            lbl_bv.Size = new Size(0, 20);
+            lbl_bv.TabIndex = 1;
+            lbl_bv.Click += lbl_bv_Click;
             // 
             // frm_Principal
             // 
