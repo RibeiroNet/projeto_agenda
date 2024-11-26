@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projeto_Agenda.VariableGlobal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,6 +48,23 @@ namespace Projeto_Agenda.Views
         {
             frm_categoria categoria = new frm_categoria();
             categoria.Show();
+        }
+
+        private void frm_Principal_Load(object sender, EventArgs e)
+        {
+            string boasvindas = $"Seja muito bem vindo, {UserSession.usuario}";
+            lbl_bv.Text = boasvindas;
+        }
+
+        private void lbl_bv_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contatoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Contato contato = new Frm_Contato();    
+            contato.Show();
         }
     }
 }

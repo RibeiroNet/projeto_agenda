@@ -13,6 +13,12 @@ cod_categoria int auto_increment primary key,
 nome_categoria varchar(20) not null
 );
 
+create table tb_Contato (
+nome varchar(80) not null,
+telefone varchar(15) primary key,
+categoria varchar(30)
+);
+
 delimiter $$
 create trigger trInsertCategoria 
 before
