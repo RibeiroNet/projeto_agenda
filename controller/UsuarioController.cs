@@ -2,6 +2,7 @@
 using Mysqlx.Cursor;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 using Projeto_Agenda.data;
+using Projeto_Agenda.VariableGlobal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,6 +15,7 @@ namespace Projeto_Agenda.controller
     internal class UsuarioController
     {
         public bool AddUsuario(string nome, string usuario, string telefone, string senha)
+
         {
             try
             {
@@ -85,7 +87,9 @@ namespace Projeto_Agenda.controller
 
                 if (resultado.Read())
                 {
-                    conexao.Close();
+                    UserSession.usuario = resultado.GetString("usuario");
+                    UserSession.senha = resultado.GetString("senha");
+                    UserSession.nome = resultado.GetString("nome");
                     return true;
                 }
                 else
@@ -215,7 +219,8 @@ namespace Projeto_Agenda.controller
             {
                 MySqlConnection conexao = conexaoDB.CriarConexao();
 
-                string sql = "UPDATE tbUsuarios SET senha = @senha WHERE usuario = @usuario;";
+                string sql = "UPDATE tbUsuarios SET senha = @senha WHERE usuario = @usuario; "+
+                    $"alter user '{usuario}'@'%' identified by '{senha}';";
 
                 conexao.Open();
 

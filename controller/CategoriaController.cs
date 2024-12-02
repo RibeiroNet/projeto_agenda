@@ -18,7 +18,7 @@ namespace Projeto_Agenda.controller
             MySqlConnection conexao = null;
             try
             {
-                conexao = conexaoDB.CriarConexao();
+                conexao = conexaoDB.CriarConexao(UserSession.usuario, UserSession.senha);
 
                 string sql = "INSERT INTO tb_categoria(nome_categoria) VALUES (@nome_categoria );";
 
@@ -64,8 +64,7 @@ namespace Projeto_Agenda.controller
                 conexao = conexaoDB.CriarConexao(UserSession.usuario, UserSession.senha); 
 
                 //select que vai retornar dados 
-                string sql = @"select cod_categoria as 'Código', nome_categoria as 'Categoria' from tb_categoria;" +
-                    $"WHERE usuario = User();";
+                string sql = "select cod_categoria as 'Código', nome_categoria as 'Categoria' from tb_categoria WHERE usuario = User();";
 
                 conexao.Open();
 
@@ -108,7 +107,7 @@ namespace Projeto_Agenda.controller
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
                 //trocando valores de @ por informações a serem cadastradas 
-                comando.Parameters.AddWithValue("cod_categoria", cod_categoria);
+                comando.Parameters.AddWithValue("@cod_categoria", cod_categoria);
 
                 //executando no banco de dados 
                 int LinhasAfetadas = comando.ExecuteNonQuery();
@@ -133,7 +132,7 @@ namespace Projeto_Agenda.controller
             }
         }
 
-        public bool UpdateCategoria(int codigo, string nome_categoria)
+        public bool UpdateCategoria(int cod_categoria, string nome_categoria)
         {
             MySqlConnection conexao = null;
 
@@ -143,9 +142,9 @@ namespace Projeto_Agenda.controller
                 conexao = conexaoDB.CriarConexao();
 
                 //comando a ser executado
-                string sql = "UPDATE tbCategoria SET nome_categoria = @nome_categoria;";
+                string sql = "UPDATE tbCategoria SET nome_categoria = @nome_categoria where cod_categoria = @cod_categoria;";
 
-                //abriu conexão
+                //abrir a conexão
                 conexao.Open();
 
                 //responsável por executar o comando SQl
@@ -153,6 +152,8 @@ namespace Projeto_Agenda.controller
 
                 //trocando valores de @ por informações a serem cadastradas 
                 comando.Parameters.AddWithValue("@nome_categoria", nome_categoria);
+                comando.Parameters.AddWithValue("@cod_categoria", cod_categoria);
+
                 int LinhasAfetadas = comando.ExecuteNonQuery();
                 conexao.Close();
 

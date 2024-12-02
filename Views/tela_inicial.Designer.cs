@@ -180,7 +180,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(705, 338);
             Controls.Add(button_cancelar);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -197,6 +197,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "tela_inicial";
             Text = "tela_inicial";
+            Load += tela_inicial_Load;
             ResumeLayout(false);
             PerformLayout();
         }

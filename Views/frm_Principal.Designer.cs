@@ -46,8 +46,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, editarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new Size(320, 30);
+            menuStrip1.Size = new Size(280, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -55,13 +54,13 @@
             // 
             arquivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sairToolStripMenuItem });
             arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            arquivoToolStripMenuItem.Size = new Size(75, 24);
+            arquivoToolStripMenuItem.Size = new Size(61, 20);
             arquivoToolStripMenuItem.Text = "&Arquivo";
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(121, 26);
+            sairToolStripMenuItem.Size = new Size(96, 22);
             sairToolStripMenuItem.Text = "&Sair ";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
@@ -69,58 +68,57 @@
             // 
             editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem, usuárioToolStripMenuItem, contatoToolStripMenuItem });
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(66, 24);
+            editarToolStripMenuItem.Size = new Size(52, 20);
             editarToolStripMenuItem.Text = "&Editar ";
             // 
             // cadastrarToolStripMenuItem
             // 
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(224, 26);
+            cadastrarToolStripMenuItem.Size = new Size(180, 22);
             cadastrarToolStripMenuItem.Text = "&Cadastrar";
             cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
             // 
             // categoriasToolStripMenuItem
             // 
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            categoriasToolStripMenuItem.Size = new Size(224, 26);
+            categoriasToolStripMenuItem.Size = new Size(133, 22);
             categoriasToolStripMenuItem.Text = "Categorias ";
             categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click;
             // 
             // usuárioToolStripMenuItem
             // 
             usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            usuárioToolStripMenuItem.Size = new Size(224, 26);
+            usuárioToolStripMenuItem.Size = new Size(180, 22);
             usuárioToolStripMenuItem.Text = "Usuário";
             usuárioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
             // 
             // contatoToolStripMenuItem
             // 
             contatoToolStripMenuItem.Name = "contatoToolStripMenuItem";
-            contatoToolStripMenuItem.Size = new Size(224, 26);
+            contatoToolStripMenuItem.Size = new Size(180, 22);
             contatoToolStripMenuItem.Text = "Contato";
             contatoToolStripMenuItem.Click += contatoToolStripMenuItem_Click;
             // 
             // lbl_bv
             // 
             lbl_bv.AutoSize = true;
-            lbl_bv.Location = new Point(12, 42);
+            lbl_bv.Location = new Point(29, 44);
             lbl_bv.Name = "lbl_bv";
-            lbl_bv.Size = new Size(0, 20);
+            lbl_bv.Size = new Size(0, 15);
             lbl_bv.TabIndex = 1;
             lbl_bv.Click += lbl_bv_Click;
             // 
             // frm_Principal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources._03_Pag_contatos_anuncio;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(320, 192);
+            ClientSize = new Size(280, 144);
             Controls.Add(lbl_bv);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "frm_Principal";
             Text = "frm_Principal";
             FormClosed += frm_Principal_FormClosed;

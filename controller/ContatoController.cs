@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using Projeto_Agenda.data;
+using Projeto_Agenda.VariableGlobal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -97,9 +98,9 @@ namespace Projeto_Agenda.controller
         {
             try
             {
-                MySqlConnection conexao = conexaoDB.CriarConexao();
+                MySqlConnection conexao = conexaoDB.CriarConexao(UserSession.usuario, UserSession.senha);
 
-                string sql = "DELETE FROM tb_Contato WHERE usuario = @telefone;";
+                string sql = "DELETE FROM tb_Contato WHERE telefone = @telefone;";
 
                 conexao.Open();
 

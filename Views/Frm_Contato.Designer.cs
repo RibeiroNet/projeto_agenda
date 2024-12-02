@@ -55,9 +55,11 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(28, 28);
+            groupBox1.Location = new Point(24, 21);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(271, 396);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(237, 297);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Adicionar novo Contato";
@@ -65,16 +67,19 @@
             // cmb_categoria
             // 
             cmb_categoria.FormattingEnabled = true;
-            cmb_categoria.Location = new Point(6, 222);
+            cmb_categoria.Location = new Point(5, 166);
+            cmb_categoria.Margin = new Padding(3, 2, 3, 2);
             cmb_categoria.Name = "cmb_categoria";
-            cmb_categoria.Size = new Size(243, 28);
+            cmb_categoria.Size = new Size(213, 23);
             cmb_categoria.TabIndex = 9;
+            cmb_categoria.SelectedIndexChanged += cmb_categoria_SelectedIndexChanged;
             // 
             // button_alterar
             // 
-            button_alterar.Location = new Point(15, 268);
+            button_alterar.Location = new Point(13, 201);
+            button_alterar.Margin = new Padding(3, 2, 3, 2);
             button_alterar.Name = "button_alterar";
-            button_alterar.Size = new Size(109, 42);
+            button_alterar.Size = new Size(95, 32);
             button_alterar.TabIndex = 8;
             button_alterar.Text = "Alterar";
             button_alterar.UseVisualStyleBackColor = true;
@@ -82,9 +87,10 @@
             // 
             // button_excluir
             // 
-            button_excluir.Location = new Point(140, 268);
+            button_excluir.Location = new Point(122, 201);
+            button_excluir.Margin = new Padding(3, 2, 3, 2);
             button_excluir.Name = "button_excluir";
-            button_excluir.Size = new Size(109, 42);
+            button_excluir.Size = new Size(95, 32);
             button_excluir.TabIndex = 7;
             button_excluir.Text = "Excluir";
             button_excluir.UseVisualStyleBackColor = true;
@@ -92,9 +98,10 @@
             // 
             // button_cadastrar
             // 
-            button_cadastrar.Location = new Point(72, 332);
+            button_cadastrar.Location = new Point(63, 249);
+            button_cadastrar.Margin = new Padding(3, 2, 3, 2);
             button_cadastrar.Name = "button_cadastrar";
-            button_cadastrar.Size = new Size(109, 42);
+            button_cadastrar.Size = new Size(95, 32);
             button_cadastrar.TabIndex = 6;
             button_cadastrar.Text = "Cadastrar";
             button_cadastrar.UseVisualStyleBackColor = true;
@@ -102,64 +109,68 @@
             // 
             // txt_telefone
             // 
-            txt_telefone.Location = new Point(6, 140);
+            txt_telefone.Location = new Point(5, 105);
+            txt_telefone.Margin = new Padding(3, 2, 3, 2);
             txt_telefone.Name = "txt_telefone";
-            txt_telefone.Size = new Size(243, 27);
+            txt_telefone.Size = new Size(213, 23);
             txt_telefone.TabIndex = 4;
             txt_telefone.TextChanged += textBox2_TextChanged;
             // 
             // txt_contato
             // 
-            txt_contato.Location = new Point(6, 68);
+            txt_contato.Location = new Point(5, 51);
+            txt_contato.Margin = new Padding(3, 2, 3, 2);
             txt_contato.Name = "txt_contato";
-            txt_contato.Size = new Size(243, 27);
+            txt_contato.Size = new Size(213, 23);
             txt_contato.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 186);
+            label3.Location = new Point(5, 140);
             label3.Name = "label3";
-            label3.Size = new Size(74, 20);
+            label3.Size = new Size(58, 15);
             label3.TabIndex = 2;
             label3.Text = "Categoria";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 108);
+            label2.Location = new Point(5, 81);
             label2.Name = "label2";
-            label2.Size = new Size(66, 20);
+            label2.Size = new Size(51, 15);
             label2.TabIndex = 1;
             label2.Text = "Telefone";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 34);
+            label1.Location = new Point(5, 26);
             label1.Name = "label1";
-            label1.Size = new Size(62, 20);
+            label1.Size = new Size(50, 15);
             label1.TabIndex = 0;
             label1.Text = "Contato";
             // 
             // DGV_contato
             // 
             DGV_contato.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGV_contato.Location = new Point(366, 28);
+            DGV_contato.Location = new Point(320, 21);
+            DGV_contato.Margin = new Padding(3, 2, 3, 2);
             DGV_contato.Name = "DGV_contato";
             DGV_contato.RowHeadersWidth = 51;
-            DGV_contato.Size = new Size(369, 396);
+            DGV_contato.Size = new Size(323, 297);
             DGV_contato.TabIndex = 1;
             // 
             // Frm_Contato
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources._03_Pag_contatos_anuncio;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(DGV_contato);
             Controls.Add(groupBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Frm_Contato";
             Text = "Frm_Contato";
             Load += Frm_Contato_Load;

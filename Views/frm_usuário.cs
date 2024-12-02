@@ -37,10 +37,10 @@ namespace Projeto_Agenda.Views
         {
             //recolhendo dados
             string senha = txt_nova_senha.Text;
-            string usuario = txt_usuario.Text;  
+            string usuario = txt_usuario.Text;
 
             //instanciando objet Usuariocontroller
-            UsuarioController controleusuario = new UsuarioController();  
+            UsuarioController controleusuario = new UsuarioController();
 
             //inserindo o user
             bool resultado = controleusuario.AlterarSenha(senha, usuario);
@@ -53,6 +53,11 @@ namespace Projeto_Agenda.Views
             {
                 MessageBox.Show("Cadastro não efetuado.");
             }
+        }
+
+        private void frm_usuário_Load(object sender, EventArgs e)
+        {
+            AtualizarDataGrid();
         }
     }
 }

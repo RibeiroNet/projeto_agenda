@@ -86,5 +86,10 @@ namespace Projeto_Agenda
         {
 
         }
+
+        private void tela_inicial_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

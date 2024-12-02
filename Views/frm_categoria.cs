@@ -22,7 +22,6 @@ namespace Projeto_Agenda.Views
         {
             CategoriaController controleCategoria = new CategoriaController();
             DataTable tabela = controleCategoria.GetCategorias();
-
             DGV_categoria.DataSource = tabela;
         }
 
@@ -37,7 +36,7 @@ namespace Projeto_Agenda.Views
 
             bool resultado = controleCategoria.AddCategoria(textbox_categoria.Text);
 
-            if (resultado == true)
+            if (resultado)
             {
                 MessageBox.Show("Cadastro efetuado com sucesso.");
             }
@@ -47,9 +46,12 @@ namespace Projeto_Agenda.Views
             }
 
             CategoriaController controlaCategoria = new CategoriaController();
+
             DataTable tabela = controlaCategoria.GetCategorias();
 
             DGV_categoria.DataSource = tabela;
+
+            AtualizarDataGrid();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -64,9 +66,19 @@ namespace Projeto_Agenda.Views
 
         private void button_excluir_Click(object sender, EventArgs e)
         {
-            int codigo = Convert.ToInt32(DGV_categoria.SelectedRows[0].Cells[0].Value);
+            int codigo = (int)(DGV_categoria.SelectedRows[0].Cells[0].Value);
             CategoriaController categoria = new CategoriaController();
+
             bool resultado = categoria.ExcluirCategoria(codigo);
+            if (resultado)
+            {
+                MessageBox.Show("Categoria Excluìda.");
+
+            }
+            else
+            {
+                MessageBox.Show("Categoria não Excluìda.");
+            }
             AtualizarDataGrid();
         }
 

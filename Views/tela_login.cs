@@ -50,7 +50,11 @@ namespace Projeto_Agenda
             if (resultado)
             {
                 frm_Principal principal = new frm_Principal();
-                principal.Show();
+                principal.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível cadastrar.");
             }
         }
     }

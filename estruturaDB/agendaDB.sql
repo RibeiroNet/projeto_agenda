@@ -10,7 +10,8 @@ senha varchar(10) not null
 
 create table tb_Categoria (
 cod_categoria int auto_increment primary key,
-nome_categoria varchar(20) not null
+nome_categoria varchar(20) not null,
+usuario varchar(20)
 );
 
 create table tb_Contato (
