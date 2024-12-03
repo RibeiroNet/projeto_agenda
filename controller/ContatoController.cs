@@ -55,6 +55,7 @@ namespace Projeto_Agenda.controller
                 return false;
             }
         }
+
         public DataTable GetContato()
         {
             //Criando uma conxão vazia
@@ -66,8 +67,9 @@ namespace Projeto_Agenda.controller
                 conexao = conexaoDB.CriarConexao();
 
                 // SELECT que retorna categorias
-                string sql = "select contato AS 'Contato', telefone AS 'Telefone', categoria AS 'Categoria'  from tb_Contato;";
+                string sql = "select cod_contato AS 'Código Contato', contato AS 'Contato',  telefone AS 'Telefone', categoria AS 'Categoria'  from tb_Contato;";
 
+                //abrindo a conexão
                 conexao.Open();
 
                 // adaptador
@@ -81,7 +83,7 @@ namespace Projeto_Agenda.controller
                 // tabela preenchida
                 return tabela;
             }
-
+            //caso de erro
             catch (Exception erro)
             {
                 MessageBox.Show($"Erro ao recuperar contato:{erro.Message}");
@@ -94,14 +96,17 @@ namespace Projeto_Agenda.controller
             }
         }
 
-        public bool ExcluirContato(string telefone)
+        public bool ExcluirContato(string cod_contato)
         {
             try
             {
+                //cria a conexão, utilizando a classe conexaoDB que está dentro da pasta 
                 MySqlConnection conexao = conexaoDB.CriarConexao(UserSession.usuario, UserSession.senha);
 
-                string sql = "DELETE FROM tb_Contato WHERE telefone = @telefone;";
+                //comando sql que será executado
+                string sql = "DELETE FROM tb_Contato WHERE cod_contato = @cod_contato;";
 
+                //abrindo a conexão
                 conexao.Open();
 
                 //responsável por executar o comando SQL
@@ -109,10 +114,12 @@ namespace Projeto_Agenda.controller
 
                 // trocando  @ pelas informações que serão cadastradas
                 // Essas informações vieram dos parametros da função
-                comando.Parameters.AddWithValue("@telefone", telefone);
+                comando.Parameters.AddWithValue("@cod_contato", cod_contato);
 
+                //executando no banco de dados 
                 int LinhasAfetadas = comando.ExecuteNonQuery();
 
+                //fechando conexão
                 conexao.Close();
 
                 if (LinhasAfetadas > 0)
@@ -125,12 +132,64 @@ namespace Projeto_Agenda.controller
                 }
 
             }
-
+            //possível erro
             catch (Exception erro)
             {
+                //mensagem a ser exibida
                 MessageBox.Show($"Erro ao deletar contato:{erro.Message}");
                 return false;
             }
+        }
+
+        public bool AlterarContato(string contato, string categoria, int cod_contato)
+        {
+            //Criando uma conxão vazia
+            MySqlConnection conexao = null;
+
+            try
+            {
+                //inserindo conexão com ConexaoDB 
+                conexao = conexaoDB.CriarConexao();
+
+                // SELECT que retorna categorias
+                string sql = @"UPDATE dbagenda.tb_Contato SET contato = (@contato), categoria = (@categoria) WHERE cod_contato = (@cod_contato);";
+
+                //abrindo a conexão
+                conexao.Open();
+
+                //responsável por executar o comando SQL
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                // trocando o valor de @ por informações posteriormente cadastradas 
+                // tais informações vieram dos parâmetros da função
+                comando.Parameters.AddWithValue("@contato", contato);
+                comando.Parameters.AddWithValue("@categoria", categoria);
+                comando.Parameters.AddWithValue("@cod_contato", cod_contato);
+
+                //executando no banco de dados 
+                int LinhasAfetadas = comando.ExecuteNonQuery();
+
+                if (LinhasAfetadas > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            //caso de erro
+            catch (Exception erro)
+            {
+                MessageBox.Show($"Erro ao alterar o contato:{erro.Message}");
+                return false;
+            }
+            finally
+            {
+                //Fechei a conexão
+                conexao.Close();
+            }
+
         }
     }
 }

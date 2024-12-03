@@ -36,6 +36,7 @@
             txt_usuario = new TextBox();
             label2 = new Label();
             label1 = new Label();
+            button_voltar = new Button();
             ((System.ComponentModel.ISupportInitialize)DGV_usuario).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             // button_excluir_usuario
             // 
-            button_excluir_usuario.Location = new Point(74, 218);
+            button_excluir_usuario.Location = new Point(70, 213);
             button_excluir_usuario.Name = "button_excluir_usuario";
             button_excluir_usuario.Size = new Size(145, 51);
             button_excluir_usuario.TabIndex = 1;
@@ -80,7 +81,7 @@
             button_cadastrar_usuario.Name = "button_cadastrar_usuario";
             button_cadastrar_usuario.Size = new Size(109, 32);
             button_cadastrar_usuario.TabIndex = 3;
-            button_cadastrar_usuario.Text = "Cadastrar";
+            button_cadastrar_usuario.Text = "Alterar";
             button_cadastrar_usuario.UseVisualStyleBackColor = true;
             button_cadastrar_usuario.Click += button_cadastrar_usuario_Click;
             // 
@@ -116,6 +117,16 @@
             label1.TabIndex = 0;
             label1.Text = "Usuário";
             // 
+            // button_voltar
+            // 
+            button_voltar.Location = new Point(425, 251);
+            button_voltar.Name = "button_voltar";
+            button_voltar.Size = new Size(109, 32);
+            button_voltar.TabIndex = 4;
+            button_voltar.Text = "Voltar";
+            button_voltar.UseVisualStyleBackColor = true;
+            button_voltar.Click += button1_Click;
+            // 
             // frm_usuário
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -123,6 +134,7 @@
             BackgroundImage = Properties.Resources._03_Pag_contatos_anuncio;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(558, 295);
+            Controls.Add(button_voltar);
             Controls.Add(groupBox1);
             Controls.Add(button_excluir_usuario);
             Controls.Add(DGV_usuario);
@@ -145,5 +157,6 @@
         private Button button_cadastrar_usuario;
         private TextBox txt_nova_senha;
         private TextBox txt_usuario;
+        private Button button_voltar;
     }
 }

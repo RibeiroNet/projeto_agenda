@@ -99,5 +99,10 @@ namespace Projeto_Agenda.Views
 
             AtualizarDataGrid();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

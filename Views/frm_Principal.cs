@@ -63,8 +63,13 @@ namespace Projeto_Agenda.Views
 
         private void contatoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_Contato contato = new Frm_Contato();    
+            Frm_Contato contato = new Frm_Contato();
             contato.Show();
+        }
+
+        private void button_voltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

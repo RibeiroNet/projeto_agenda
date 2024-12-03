@@ -171,7 +171,7 @@
             button_cancelar.Name = "button_cancelar";
             button_cancelar.Size = new Size(229, 55);
             button_cancelar.TabIndex = 16;
-            button_cancelar.Text = "Cancelar";
+            button_cancelar.Text = "Retornar";
             button_cancelar.UseVisualStyleBackColor = false;
             button_cancelar.Click += button_cancelar_Click;
             // 

@@ -98,7 +98,7 @@ namespace Projeto_Agenda.controller
                 MySqlConnection conexao = conexaoDB.CriarConexao();
 
                 //comando a ser executado
-                string sql = "DELETE FROM tbCategoria WHERE cod_categoria = @cod_categoria;";
+                string sql = "DELETE FROM tb_categoria WHERE cod_categoria = @cod_categoria;";
 
                 //abriu conexão
                 conexao.Open();
@@ -126,7 +126,7 @@ namespace Projeto_Agenda.controller
             }
             catch (Exception erro)
             {
-                MessageBox.Show($"Erro ao recuperar categoria: {erro.Message}");
+                MessageBox.Show($"Erro ao excluir categoria: {erro.Message}");
 
                 return false;
             }
@@ -142,7 +142,7 @@ namespace Projeto_Agenda.controller
                 conexao = conexaoDB.CriarConexao();
 
                 //comando a ser executado
-                string sql = "UPDATE tbCategoria SET nome_categoria = @nome_categoria where cod_categoria = @cod_categoria;";
+                string sql = "UPDATE tb_categoria SET nome_categoria = @nome_categoria where cod_categoria = @cod_categoria;";
 
                 //abrir a conexão
                 conexao.Open();
@@ -169,7 +169,7 @@ namespace Projeto_Agenda.controller
             }
             catch (Exception erro)
             {
-                MessageBox.Show($"Erro ao recuperar categoria: {erro.Message}");
+                MessageBox.Show($"Erro ao alterar categoria: {erro.Message}");
 
                 return false;
             }

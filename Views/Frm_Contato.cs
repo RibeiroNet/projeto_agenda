@@ -52,28 +52,53 @@ namespace Projeto_Agenda.Views
             DGV_contato.DataSource = tabela;
 
             AtualizarDataGrid();
+        }
+
+        private void Frm_Contato_Load(object sender, EventArgs e)
+        {
+            AtualizarDataGrid();
             CategoriaController controlecategoria = new CategoriaController();
             DataTable ttabela = controlecategoria.GetCategorias();
             cmb_categoria.DataSource = ttabela;
             cmb_categoria.DisplayMember = "categoria";
         }
 
-        private void Frm_Contato_Load(object sender, EventArgs e)
-        {
-            AtualizarDataGrid();
-        }
-
         private void button_excluir_Click(object sender, EventArgs e)
         {
-            string telefone = Convert.ToString(DGV_contato.SelectedRows[0].Cells[1].Value);
+            //recolhendo dados do formulário
+            string telefone = Convert.ToString(DGV_contato.SelectedRows[0].Cells[0].Value);
+
+            //chamando classe
             ContatoController contato = new ContatoController();
+
+            //inserindo usuário
             bool resultado = contato.ExcluirContato(telefone);
+
+            //atualizando dados
             AtualizarDataGrid();
         }
 
         private void button_alterar_Click(object sender, EventArgs e)
         {
+            //recolhendo dados do formulário
+            string nome = txt_contato.Text;
+            string categoria = cmb_categoria.Text;
+            int cod_contato = Convert.ToInt32(DGV_contato.SelectedRows[0].Cells[0].Value);
 
+            //chamando classe
+            ContatoController alterarcontato = new ContatoController();
+
+            //inserindo usuário
+            bool resultado = alterarcontato.AlterarContato(nome, categoria, cod_contato);
+            if (resultado)
+            {
+                MessageBox.Show("O contato foi modificado.");
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível alterar o contato.");
+            }
+            AtualizarDataGrid();
         }
 
         private void cmb_categoria_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,6 +109,11 @@ namespace Projeto_Agenda.Views
         private void DGV_contato_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button_voltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
