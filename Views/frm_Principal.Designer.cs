@@ -47,7 +47,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, editarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(663, 24);
+            menuStrip1.Size = new Size(523, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -104,20 +104,19 @@
             // lbl_bv
             // 
             lbl_bv.AutoSize = true;
-            lbl_bv.BackColor = Color.Transparent;
-            lbl_bv.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_bv.ForeColor = SystemColors.HotTrack;
-            lbl_bv.Location = new Point(32, 48);
+            lbl_bv.BackColor = Color.DeepSkyBlue;
+            lbl_bv.Font = new Font("Showcard Gothic", 18F);
+            lbl_bv.Location = new Point(12, 33);
             lbl_bv.Name = "lbl_bv";
-            lbl_bv.Size = new Size(0, 40);
+            lbl_bv.Size = new Size(0, 30);
             lbl_bv.TabIndex = 1;
             lbl_bv.Click += lbl_bv_Click;
             // 
             // button_voltar
             // 
-            button_voltar.Location = new Point(541, 309);
+            button_voltar.Location = new Point(351, 193);
             button_voltar.Name = "button_voltar";
-            button_voltar.Size = new Size(110, 35);
+            button_voltar.Size = new Size(160, 55);
             button_voltar.TabIndex = 5;
             button_voltar.Text = "Voltar";
             button_voltar.UseVisualStyleBackColor = true;
@@ -129,7 +128,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources._03_Pag_contatos_anuncio;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(663, 356);
+            ClientSize = new Size(523, 248);
             Controls.Add(button_voltar);
             Controls.Add(lbl_bv);
             Controls.Add(menuStrip1);

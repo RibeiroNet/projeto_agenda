@@ -115,5 +115,10 @@ namespace Projeto_Agenda.Views
         {
             this.Hide();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

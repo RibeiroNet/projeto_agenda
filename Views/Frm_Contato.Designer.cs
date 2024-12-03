@@ -60,7 +60,7 @@
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(237, 281);
+            groupBox1.Size = new Size(237, 250);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Adicionar novo Contato";
@@ -68,7 +68,7 @@
             // cmb_categoria
             // 
             cmb_categoria.FormattingEnabled = true;
-            cmb_categoria.Location = new Point(5, 166);
+            cmb_categoria.Location = new Point(4, 139);
             cmb_categoria.Margin = new Padding(3, 2, 3, 2);
             cmb_categoria.Name = "cmb_categoria";
             cmb_categoria.Size = new Size(213, 23);
@@ -77,7 +77,7 @@
             // 
             // button_alterar
             // 
-            button_alterar.Location = new Point(13, 201);
+            button_alterar.Location = new Point(4, 166);
             button_alterar.Margin = new Padding(3, 2, 3, 2);
             button_alterar.Name = "button_alterar";
             button_alterar.Size = new Size(95, 32);
@@ -88,7 +88,7 @@
             // 
             // button_excluir
             // 
-            button_excluir.Location = new Point(122, 201);
+            button_excluir.Location = new Point(122, 166);
             button_excluir.Margin = new Padding(3, 2, 3, 2);
             button_excluir.Name = "button_excluir";
             button_excluir.Size = new Size(95, 32);
@@ -99,10 +99,10 @@
             // 
             // button_cadastrar
             // 
-            button_cadastrar.Location = new Point(68, 245);
+            button_cadastrar.Location = new Point(14, 214);
             button_cadastrar.Margin = new Padding(3, 2, 3, 2);
             button_cadastrar.Name = "button_cadastrar";
-            button_cadastrar.Size = new Size(95, 32);
+            button_cadastrar.Size = new Size(204, 32);
             button_cadastrar.TabIndex = 6;
             button_cadastrar.Text = "Cadastrar";
             button_cadastrar.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             // 
             // txt_telefone
             // 
-            txt_telefone.Location = new Point(5, 105);
+            txt_telefone.Location = new Point(4, 87);
             txt_telefone.Margin = new Padding(3, 2, 3, 2);
             txt_telefone.Name = "txt_telefone";
             txt_telefone.Size = new Size(213, 23);
@@ -119,7 +119,7 @@
             // 
             // txt_contato
             // 
-            txt_contato.Location = new Point(5, 51);
+            txt_contato.Location = new Point(5, 35);
             txt_contato.Margin = new Padding(3, 2, 3, 2);
             txt_contato.Name = "txt_contato";
             txt_contato.Size = new Size(213, 23);
@@ -128,16 +128,17 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(5, 140);
+            label3.Location = new Point(6, 122);
             label3.Name = "label3";
             label3.Size = new Size(58, 15);
             label3.TabIndex = 2;
             label3.Text = "Categoria";
+            label3.Click += label3_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(5, 81);
+            label2.Location = new Point(4, 70);
             label2.Name = "label2";
             label2.Size = new Size(51, 15);
             label2.TabIndex = 1;
@@ -146,7 +147,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(5, 26);
+            label1.Location = new Point(5, 18);
             label1.Name = "label1";
             label1.Size = new Size(50, 15);
             label1.TabIndex = 0;
@@ -155,20 +156,20 @@
             // DGV_contato
             // 
             DGV_contato.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGV_contato.Location = new Point(320, 5);
+            DGV_contato.Location = new Point(274, 5);
             DGV_contato.Margin = new Padding(3, 2, 3, 2);
             DGV_contato.Name = "DGV_contato";
             DGV_contato.RowHeadersWidth = 51;
             DGV_contato.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGV_contato.Size = new Size(323, 281);
+            DGV_contato.Size = new Size(239, 250);
             DGV_contato.TabIndex = 1;
             DGV_contato.CellContentClick += DGV_contato_CellContentClick;
             // 
             // button_voltar
             // 
-            button_voltar.Location = new Point(579, 294);
+            button_voltar.Location = new Point(358, 260);
             button_voltar.Name = "button_voltar";
-            button_voltar.Size = new Size(109, 32);
+            button_voltar.Size = new Size(155, 32);
             button_voltar.TabIndex = 5;
             button_voltar.Text = "Voltar";
             button_voltar.UseVisualStyleBackColor = true;
@@ -180,7 +181,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources._03_Pag_contatos_anuncio;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(525, 295);
             Controls.Add(button_voltar);
             Controls.Add(DGV_contato);
             Controls.Add(groupBox1);

@@ -15,21 +15,30 @@ namespace Projeto_Agenda.controller
     {
         public bool AddCategoria(string nome_categoria)
         {
+           
             MySqlConnection conexao = null;
             try
             {
+                //cria a conexão, utilizando a classe conexaoDB que está dentro da pasta(usando dados de um usuário específico)
                 conexao = conexaoDB.CriarConexao(UserSession.usuario, UserSession.senha);
 
+                //comando sql que será executado
                 string sql = "INSERT INTO tb_categoria(nome_categoria) VALUES (@nome_categoria );";
 
+                //abrindo conexão com o banco 
                 conexao.Open();
 
+                //responsável por executar o comando sql 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
+                // trocando o valor de @ por informações posteriormente cadastradas 
+                // tais informações vieram dos parâmetros da função
                 comando.Parameters.AddWithValue("@nome_categoria", nome_categoria);
 
+                //executando no banco de dados 
                 int LinhasAfetadas = comando.ExecuteNonQuery();
 
+                //caso haja erro em linhas
                 if (LinhasAfetadas > 0)
                 {
                     return true;
@@ -66,6 +75,7 @@ namespace Projeto_Agenda.controller
                 //select que vai retornar dados 
                 string sql = "select cod_categoria as 'Código', nome_categoria as 'Categoria' from tb_categoria WHERE usuario = User();";
 
+                //abrindo conexão
                 conexao.Open();
 
                 //ao invés de mysqlcommand usamos mysqldataadapter, pois quero trabalhar 
@@ -112,6 +122,7 @@ namespace Projeto_Agenda.controller
                 //executando no banco de dados 
                 int LinhasAfetadas = comando.ExecuteNonQuery();
 
+                //fecha conexão
                 conexao.Close();
 
                 if (LinhasAfetadas > 0)
@@ -134,6 +145,7 @@ namespace Projeto_Agenda.controller
 
         public bool UpdateCategoria(int cod_categoria, string nome_categoria)
         {
+            //conexão vazia c BD
             MySqlConnection conexao = null;
 
             try
@@ -154,6 +166,7 @@ namespace Projeto_Agenda.controller
                 comando.Parameters.AddWithValue("@nome_categoria", nome_categoria);
                 comando.Parameters.AddWithValue("@cod_categoria", cod_categoria);
 
+                //comando a ser exec
                 int LinhasAfetadas = comando.ExecuteNonQuery();
                 conexao.Close();
 

@@ -20,8 +20,10 @@ create table tb_Contato (
 contato varchar(80) not null,
 cod_contato int auto_increment primary key, 
 telefone varchar(15),
+usuario varchar(20),
 categoria varchar(30)
 );
+
 
 create table tbLog (
 cod_log int auto_increment primary key,
@@ -36,6 +38,19 @@ create trigger trInsertCategoria
 before
 insert
 on tb_Categoria for each row 
+begin 
+   set new.usuario = user();
+   end;
+$$
+
+delimiter ;
+
+-- trigger que separa os contatos dos usuários
+delimiter $$
+create trigger trInsertContato
+before
+insert
+on tb_contato for each row 
 begin 
    set new.usuario = user();
    end;

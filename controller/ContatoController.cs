@@ -18,7 +18,7 @@ namespace Projeto_Agenda.controller
             try
             {
                 //cria a conexão, utilizando a classe conexaoDB que está dentro da pasta 
-                MySqlConnection conexao = conexaoDB.CriarConexao();
+                MySqlConnection conexao = conexaoDB.CriarConexao(UserSession.usuario,UserSession.senha);
 
                 //comando sql que será executado
                 string sql = "INSERT INTO tb_Contato (contato, telefone, categoria) VALUES (@contato, @telefone, @categoria);";
@@ -64,10 +64,10 @@ namespace Projeto_Agenda.controller
             try
             {
                 //inserindo conexão com ConexaoDB 
-                conexao = conexaoDB.CriarConexao();
+                conexao = conexaoDB.CriarConexao(UserSession.usuario, UserSession.senha);
 
                 // SELECT que retorna categorias
-                string sql = "select cod_contato AS 'Código Contato', contato AS 'Contato',  telefone AS 'Telefone', categoria AS 'Categoria'  from tb_Contato;";
+                string sql = "select cod_contato AS 'Código Contato', contato AS 'Contato',  telefone AS 'Telefone', categoria AS 'Categoria'  from tb_Contato WHERE usuario = User();";
 
                 //abrindo a conexão
                 conexao.Open();
