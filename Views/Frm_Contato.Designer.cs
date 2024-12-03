@@ -158,8 +158,10 @@
             DGV_contato.Margin = new Padding(3, 2, 3, 2);
             DGV_contato.Name = "DGV_contato";
             DGV_contato.RowHeadersWidth = 51;
+            DGV_contato.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGV_contato.Size = new Size(323, 297);
             DGV_contato.TabIndex = 1;
+            DGV_contato.CellContentClick += DGV_contato_CellContentClick;
             // 
             // Frm_Contato
             // 

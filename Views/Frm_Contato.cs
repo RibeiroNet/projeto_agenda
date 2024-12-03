@@ -80,5 +80,10 @@ namespace Projeto_Agenda.Views
         {
 
         }
+
+        private void DGV_contato_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

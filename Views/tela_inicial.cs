@@ -79,7 +79,7 @@ namespace Projeto_Agenda
 
         private void button_cancelar_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
         }
 
         private void textbox_usuario2_TextChanged(object sender, EventArgs e)

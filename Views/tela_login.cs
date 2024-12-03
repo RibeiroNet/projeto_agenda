@@ -46,7 +46,6 @@ namespace Projeto_Agenda
         {
             UsuarioController controleusuario = new UsuarioController();
             bool resultado = controleusuario.LogarUsuario(textbox_usuário.Text, textbox_senha.Text);
-            MessageBox.Show(resultado.ToString());
             if (resultado)
             {
                 frm_Principal principal = new frm_Principal();
@@ -54,7 +53,7 @@ namespace Projeto_Agenda
             }
             else
             {
-                MessageBox.Show("Não foi possível cadastrar.");
+                MessageBox.Show("Não foi possível entrar.");
             }
         }
     }
